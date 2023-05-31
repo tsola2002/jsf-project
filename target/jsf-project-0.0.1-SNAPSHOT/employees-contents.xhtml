@@ -1,0 +1,33 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+	<div align="center">
+		<br/>
+		<h:outputText value="Solomons JSF page" styleClass="contentsTitle" />
+		
+		<h1>Hello World</h1>
+		
+		<!-- FORM CONTENTS  -->
+		<h:form>
+
+			<h:outputLabel for="input" value="Input" />
+			
+			<h:inputText id="input" value="#{helloWorld.input}" />
+			
+			<h:commandButton value="Submit" action="#{helloWorld.submit}">
+			
+				<f:ajax execute="@form" render=":output" />
+			
+			</h:commandButton>
+			
+		</h:form>
+		
+		<h:outputText id="output" value="#{helloWorld.output}" />
+	</div>	
+
+</ui:composition>
